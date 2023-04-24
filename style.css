@@ -38,7 +38,7 @@ body {
 .task {
   width: 56%;
   display: inline-block;
-  flex-grow: 1
+  flex-grow: 1;
 }
 
 .list {
@@ -138,19 +138,19 @@ h3 {
 /* Completed */
 
 .task-form__label_completed {
-  text-decoration: line-through
+  text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
 
 .task-form__text-input {
-  display: none
+  display: none;
 }
 
 .task-form_edit .task-form__text-input {
   display: inline-block;
-  width: 224px
+  width: 224px;
 }
 
 .task-form_edit .task-form__label {
