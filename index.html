@@ -9,63 +9,76 @@
 
 <body>
 
-  <header class="aaa">
-    <img src="./eisenhower-matrix.jpg">
-    <a class="more_inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  <header class="header">
+    <img src="./eisenhower-matrix.jpg" class="header__img">
+    <a class="header__info" href="https://goal-life.com/page/method/matrix-eisenhower">
+      Want more details?
+    </a>
   </header>
 
-    <article class="centered-main-page-element">
+    <main class="main">
 
-      <h3>Add Item</h3> <!--TODO: настроить отступ в css, здесь был <label for="new-task">Add Item</label> -->
+      <section class="add-item">
 
+        <h3>Add Item</h3>
 
-      <section id="top-section-for-adding-element-to-list">
-
-        <div class="task-row-wrapper">
-          <input id="new-task"class="task" type="text">
-          <button>Add</button>
+        <div class="add-item__form task-form">
+          <input class="add-item__input task" type="text">
+          <button class="add-item__button button">Add</button>
         </div>
 
       </section>
 
-      <h3>Todo</h3>
+      <section class="todo">
 
-      <section>
+        <h3>Todo</h3>
 
-        <ul id="incomplete-tasks">
-          <li>
-            <input type="checkbox">
-            <label class="task">Pay Bills</label>
-            <input type="text" class="task">
-            <button class="edit">Edit</button>
-            <button class="delete"><img src="./remove.svg"></button>
+        <ul class="todo__list list">
+
+          <li class="task-form">
+            <input type="checkbox" class="task-form__checkbox">
+            <label class="task-form__label task">Pay Bills</label>
+            <input type="text" class="task-form__text-input task">
+            <button class="task-form__edit-button button">Edit</button>
+            <button class="task-form__delete-button button">
+              <img src="./remove.svg" class="task-form__delete-img">
+            </button>
           </li>
-          <li class="edit-mode">
-            <input type="checkbox">
-            <label class="task">Go Shopping</label>
-            <input type="text" value="Go Shopping" class="task">
-            <button class="edit">Save</button>
-            <button class="delete"><img src="./remove.svg"></button>
+
+          <li class="task-form task-form_edit">
+            <input type="checkbox" class="task-form__checkbox">
+            <label class="task-form__label task">Go Shopping</label>
+            <input type="text" value="Go Shopping" class="task-form__text-input task">
+            <button class="task-form__edit-button button">Save</button>
+            <button class="task-form__delete-button button">
+              <img src="./remove.svg" class="task-form__delete-img">
+            </button>
           </li>
         </ul>
 
       </section>
 
-      <h3>Completed</h3>
-
-      <section>
+      <section class="completed">
         
-        <ul id="completed-tasks">
-          <li><input type="checkbox" checked>
-            <label class="task">See the Doctor</label>
-            <input type="text" class="task">
-            <button class="edit">Edit</button>
-            <button class="delete"><img src="./remove.svg"></button>
+        <h3>Completed</h3>
+
+        <ul class="completed__list list">
+
+          <li class="task-form">
+            <input type="checkbox" class="task-form__checkbox" checked>
+            <label class="task-form__label task-form__label_completed task">
+              See the Doctor
+            </label>
+            <input type="text" class="task-form__text-input task">
+            <button class="task-form__edit-button button">Edit</button>
+            <button class="task-form__delete-button button">
+              <img src="./remove.svg" class="task-form__delete-img">
+            </button>
          </li>
        </ul>
 
       </section>
-    </article>
+    </main>
   <script src="app.js"></script>
 </body>
 
