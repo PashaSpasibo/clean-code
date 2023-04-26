@@ -147,6 +147,9 @@
 .task-form__text-input {
   display: none;
 }
+.add-item__input {
+  display: inline-block;
+}
 
 .task-form_edit .task-form__text-input {
   display: inline-block;
