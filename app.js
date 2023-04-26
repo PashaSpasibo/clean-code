@@ -10,7 +10,7 @@
 
 var taskInput=document.querySelector(".add-item__input");//Add a new task.
 var addButton=document.querySelector(".add-item__button");//first button
-var todoListHoder=document.querySelector(".todo__list");//ul of #incomplete-tasks
+var todoListHolder=document.querySelector(".todo__list");//ul of #incomplete-tasks
 var completedListHolder=document.querySelector(".completed__list");//completed-tasks
 
 
@@ -71,8 +71,8 @@ var addTask=function(){
   if (!taskInput.value) return;
   var listItem=createNewTaskElement(taskInput.value);
 
-  //Append listItem to todoListHoder
-  todoListHoder.appendChild(listItem);
+  //Append listItem to todoListHolder
+  todoListHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 
   taskInput.value="";
@@ -130,6 +130,10 @@ var taskCompleted=function(){
   completedListHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 
+  var label=listItem.querySelector(".task-form__label");
+
+  label.classList.toggle("task-form__label_completed");
+
 }
 
 
@@ -139,8 +143,12 @@ var taskIncomplete=function(){
   //When the checkbox is unchecked
   //Append the task list item to the #incompleteTasks.
   var listItem=this.parentNode;
-  todoListHoder.appendChild(listItem);
+  todoListHolder.appendChild(listItem);
   bindTaskEvents(listItem,taskCompleted);
+
+  var label=listItem.querySelector(".task-form__label");
+
+  label.classList.toggle("task-form__label_completed");
 }
 
 
@@ -174,12 +182,12 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
   checkBox.onchange=checkBoxEventHandler;
 }
 
-//cycle over todoListHoder ul list items
+//cycle over todoListHolder ul list items
 //for each list item
-for (var i=0; i<todoListHoder.children.length;i++){
+for (var i=0; i<todoListHolder.children.length;i++){
 
   //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(todoListHoder.children[i],taskCompleted);
+  bindTaskEvents(todoListHolder.children[i],taskCompleted);
 }
 
 
